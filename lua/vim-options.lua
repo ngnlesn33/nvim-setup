@@ -1,22 +1,25 @@
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set relativenumber")
 vim.g.mapleader = " "
+
+vim.opt.clipboard = "unnamedplus"
+vim.opt.mouse = "a"
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop=2
+vim.opt.shiftwidth=2
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.g.autoformat = true
 vim.g.skip_ts_context_commentstring_module = true
+vim.opt.confirm = true
+vim.opt.fillchars = { eob = ' ' }
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.winblend = 0
 vim.opt.cmdheight = 1
 vim.opt.scrolloff = 10
 vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
+vim.opt.smartcase = true
 vim.opt.smarttab = true
 vim.opt.breakindent = true
 vim.opt.wrap = false -- No Wrap lines
-vim.keymap.set("n","<C-a>","gg<S-v>G")
-
-
--- New tab
--- vim.keymap.set("n", "te", ":tabedit<Return>")
--- vim.keymap.set("n", "<tab>", ":tabnext<Return>", opts)
--- vim.keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
+vim.opt.laststatus = 3

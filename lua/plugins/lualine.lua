@@ -5,8 +5,8 @@ return {
 		require('lualine').setup({
 		options = {
 --			theme = 'nord'
-				-- theme = 'nordic'
-				 theme = 'tokyonight'
+				theme = 'nordic'
+				 -- theme = 'tokyonight'
 		}
 	})
 	end
