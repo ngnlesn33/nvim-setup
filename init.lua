@@ -10,7 +10,7 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
     lazypath,
   })
 vim.opt.rtp:prepend(lazypath)
--- Enable clipboard support
+
 require("vim-options")
 require("keymaps")
 require("lazy").setup("plugins")

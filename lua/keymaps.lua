@@ -23,5 +23,9 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- Apply nvim setting change
-vim.keymap.set('n', '<leader>r', '[[<cmd>source %<CR><cmd>echo "File sourced"<CR>]]', { desc = "Apply nvim setting change"})
-
+vim.keymap.set(
+	"n",
+	"<leader>r",
+	'[[<cmd>source %<CR><cmd>echo "File sourced"<CR>]]',
+	{ desc = "Apply nvim setting change" }
+)
