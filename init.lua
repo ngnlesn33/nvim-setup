@@ -12,5 +12,6 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
+require("init")
 require("keymaps")
 require("lazy").setup("plugins")
