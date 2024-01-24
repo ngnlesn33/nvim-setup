@@ -1,15 +1,15 @@
 return {
 	"mfussenegger/nvim-dap",
 	dependencies = {
-		"leoluz/nvim-dap-go",
 		"rcarriga/nvim-dap-ui",
-		"theHamsta/nvim-dap-virtual-text",
+    "theHamsta/nvim-dap-virtual-text",
 	},
 	config = function()
 		require("dapui").setup()
-		require("dap-go").setup()
 		require("nvim-dap-virtual-text").setup({
-			commented = true,
+			-- commented = true,
+      highlight_changed_variables = true,
+      show_stop_reason = true,
 		})
 
 		local dap, dapui = require("dap"), require("dapui")
@@ -32,11 +32,11 @@ return {
 			port = "${port}",
 			executable = {
 				-- CHANGE THIS to your path!
-				command = "D:\\Documents\\externalLib\\extension\\adapter\\codelldb.exe",
+				command = "/home/ngnlesn33/downloads/codelldb/extension/adapter/codelldb",
 				args = { "--port", "${port}" },
 
 				-- On windows you may have to uncomment this:
-				detached = false,
+				-- detached = false,
 			},
 		}
 		dap.configurations.cpp = {
@@ -54,7 +54,7 @@ return {
 		vim.keymap.set("n", "<Leader>b", ":DapToggleBreakpoint<CR>")
 		vim.keymap.set("n", "<F5>", ":DapContinue<CR>")
 		vim.keymap.set("n", "<F12>", ":DapTerminate<CR>")
-		vim.keymap.set("n", "<F11>", ":DapStepInto<CR>")
+		vim.keymap.set("n", "<F8>", ":DapStepInto<CR>")
 		vim.keymap.set("n", "<F10>", ":DapStepOver<CR>")
 	end,
 }

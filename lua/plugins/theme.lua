@@ -1,8 +1,18 @@
 return {
-	"catppuccin/nvim",
-	name = "catppuccin",
+	-- "catppuccin/nvim",
+	-- name = "catppuccin",
+	-- priority = 1000,
+	-- config = function()
+	-- 	vim.cmd.colorscheme("catppuccin-frappe")
+	-- end,
+	'AlexvZyl/nordic.nvim',
+	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd.colorscheme("catppuccin-frappe")
-	end,
+	    require 'nordic' .load()
+	end
+	-- "shaunsingh/nord.nvim",
+	-- config = function()
+	-- 	vim.cmd([[colorscheme nord]])
+	-- end,
 }

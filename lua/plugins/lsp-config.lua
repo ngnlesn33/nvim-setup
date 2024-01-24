@@ -13,9 +13,9 @@ return {
       auto_install = true,
     },
   },
-  {
-    "p00f/clangd_extensions.nvim",
-  },
+  -- {
+  --   "p00f/clangd_extensions.nvim",
+  -- },
   {
     "simrat39/inlay-hints.nvim",
   },
@@ -31,10 +31,10 @@ return {
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
-      local function setup_clangd_inlay_hints(client)
-        require("clangd_extensions.inlay_hints").setup_autocmd()
-        require("clangd_extensions.inlay_hints").set_inlay_hints()
-      end
+      -- local function setup_clangd_inlay_hints(client)
+      --   require("clangd_extensions.inlay_hints").setup_autocmd()
+      --   require("clangd_extensions.inlay_hints").set_inlay_hints()
+      -- end
 
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
@@ -55,7 +55,9 @@ return {
           "clangd",
           "--offset-encoding=utf-16",
         },
-        on_attach = setup_clangd_inlay_hints,
+        on_attach = function(client, bufnr)
+          require("lsp-inlayhints").on_attach(client, bufnr)
+        end,
       })
       lspconfig.tsserver.setup({
         capabilities = capabilities,
