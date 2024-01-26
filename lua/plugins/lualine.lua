@@ -1,6 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { "nvim-tree/nvim-web-devicons", "AndreM222/copilot-lualine" },
   config = function()
     require("lualine").setup({
       options = {
@@ -10,7 +10,7 @@ return {
       },
       sections = {
         lualine_a = { "mode" },
-        lualine_b = { "branch", "diff" },
+        lualine_b = { "branch", "diff", "diagnostics" },
         lualine_c = {
           {
             "filetype",
@@ -24,12 +24,14 @@ return {
             path = 1,
           },
         },
-        lualine_x = { "location" },
-        lualine_z = {
-          function()
-            return " " .. os.date("%R")
-          end,
+        lualine_x = {
+          {
+            "copilot",
+            show_colors = true,
+            show_loading = true,
+          },
         },
+        lualine_z = { "location" },
       },
     })
   end,
