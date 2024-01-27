@@ -26,5 +26,5 @@ vim.opt.smarttab = true
 vim.opt.breakindent = true
 vim.opt.wrap = false -- No Wrap lines
 vim.opt.laststatus = 3
-vim.opt.pumblend = 10 -- Popup blend
+vim.opt.pumblend = 0 -- Popup blend
 vim.opt.pumheight = 10 -- Maximum number of entries in a popup
